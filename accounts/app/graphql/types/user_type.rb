@@ -1,17 +1,12 @@
 module Types
-  class QueryType < Types::BaseObject
-    field :search_user, UserType, null: true do
-      description "Find user by id"
-      argument :id, ID, required: true
-    end
+  class UserType < Types::BaseObject
+    key fields: 'id'
 
-    # Then provide an implementation:
-    def search_user(id:)
-      puts "#{id}"
-    end
+    field :id, ID, null: false
+    field :name, String, null: true
 
-    def me
-      puts "#{id}"
+    def self.resolve_reference(object, _context)
+      puts object[:id]
     end
   end
 end
