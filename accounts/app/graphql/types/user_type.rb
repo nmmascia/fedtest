@@ -4,9 +4,6 @@ module Types
 
     field :id, ID, null: false
     field :name, String, null: true
-
-    def self.resolve_reference(object, _context)
-      puts object[:id]
-    end
+    field :email, String, null: false
   end
 end
