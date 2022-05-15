@@ -12,11 +12,11 @@ defmodule BookingsWeb.Router do
   scope "/" do
     pipe_through(:graphql)
 
-    forward("/", Absinthe.Plug, schema: GraphqlTutorialWeb.Schema)
+    forward("/", Absinthe.Plug, schema: BookingsWeb.Schema)
   end
 
   if Mix.env() == :dev do
-    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: GraphqlTutorialWeb.Schema)
+    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: BookingsWeb.Schema)
   end
 
   # Enables LiveDashboard only for development

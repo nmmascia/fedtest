@@ -9,3 +9,7 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+Bookings.Repo.insert!(%Bookings.Booking{
+  user_id: "1",
+  notes: "A really nice place"
+})
